@@ -3,530 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tavra - Your AI Chief of Staff via SMS</title>
-  <meta name="description" content="AI assistant via SMS. No apps, no logins. Just text. Reminders, notes, voice messages, calendar sync. Carbon negative platform.">
+  <title>Terms of Service — Tavra</title>
+  <meta name="description" content="Terms of Service for Tavra AI products and services.">
   
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Tavra - Your AI Chief of Staff via SMS">
-  <meta property="og:description" content="AI assistant via SMS. No apps, no logins. Just text.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tavra.ai">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   
   <style>
+    :root {
+      --color-ink: #1a1a1a;
+      --color-paper: #fafaf8;
+      --color-muted: #6b6b6b;
+      --color-accent: #2d5a4a;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+    }
+    
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     
+    html {
+      font-size: 18px;
+    }
+    
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #fff;
+      font-family: var(--font-body);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      line-height: 1.7;
     }
     
     .container {
-      max-width: 1200px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 2rem;
     }
     
     /* Header */
     header {
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
     
-    .nav {
+    header .container {
+      max-width: 1200px;
+    }
+    
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     
     .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: #2563eb;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--color-ink);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
     }
     
     .nav-links a {
-      margin-left: 30px;
+      color: var(--color-muted);
       text-decoration: none;
-      color: #666;
-      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.2s;
     }
     
     .nav-links a:hover {
-      color: #2563eb;
+      color: var(--color-ink);
     }
     
-    /* Hero Section */
-    .hero {
-      padding: 80px 0;
-      text-align: center;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+    /* Content */
+    .legal-content {
+      padding: 4rem 0 6rem;
     }
     
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      line-height: 1.2;
+    .legal-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
     
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 40px;
-      opacity: 0.95;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+    .legal-header h1 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
     }
     
-    .cta-button {
-      display: inline-block;
-      padding: 16px 40px;
-      background: white;
-      color: #667eea;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 18px;
-      transition: transform 0.2s;
+    .legal-meta {
+      color: var(--color-muted);
+      font-size: 0.9rem;
     }
     
-    .cta-button:hover {
-      transform: translateY(-2px);
+    .legal-body h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin: 2.5rem 0 1rem;
+      color: var(--color-ink);
     }
     
-    .phone-number {
-      margin-top: 20px;
-      font-size: 16px;
-      opacity: 0.9;
+    .legal-body p {
+      margin-bottom: 1rem;
+      color: #444;
     }
     
-    /* Features */
-    .features {
-      padding: 80px 0;
-      background: #f9fafb;
+    .legal-body ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
     }
     
-    .section-title {
-      text-align: center;
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 60px;
-      color: #1f2937;
+    .legal-body li {
+      margin-bottom: 0.5rem;
+      color: #444;
     }
     
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-    }
-    
-    .feature-card {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    
-    .feature-icon {
-      font-size: 36px;
-      margin-bottom: 16px;
-    }
-    
-    .feature-card h3 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #1f2937;
-    }
-    
-    .feature-card p {
-      color: #6b7280;
-      line-height: 1.6;
-    }
-    
-    /* Pricing */
-    .pricing {
-      padding: 80px 0;
-    }
-    
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 60px;
-    }
-    
-    .pricing-card {
-      border: 2px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 40px 30px;
-      text-align: center;
-      position: relative;
-      background: white;
-    }
-    
-    .pricing-card.featured {
-      border-color: #667eea;
-      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
-    }
-    
-    .pricing-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #667eea;
-      color: white;
-      padding: 4px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-    
-    .pricing-card h3 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #1f2937;
-    }
-    
-    .pricing-card .price {
-      font-size: 42px;
-      font-weight: 700;
-      color: #667eea;
-      margin: 20px 0;
-    }
-    
-    .pricing-card .price span {
-      font-size: 18px;
-      color: #6b7280;
-    }
-    
-    .pricing-card ul {
-      list-style: none;
-      margin: 30px 0;
-      text-align: left;
-    }
-    
-    .pricing-card ul li {
-      padding: 12px 0;
-      border-bottom: 1px solid #f3f4f6;
-      color: #4b5563;
-    }
-    
-    .pricing-card ul li:before {
-      content: "✓ ";
-      color: #10b981;
-      font-weight: bold;
-      margin-right: 8px;
-    }
-    
-    .pricing-button {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      background: #667eea;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      margin-top: 20px;
-      transition: background 0.2s;
-    }
-    
-    .pricing-button:hover {
-      background: #5568d3;
-    }
-    
-    .trial-note {
-      margin-top: 12px;
-      font-size: 14px;
-      color: #6b7280;
-    }
-    
-    /* Climate Section */
-    .climate {
-      padding: 80px 0;
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: white;
-      text-align: center;
-    }
-    
-    .climate h2 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    
-    .climate p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      opacity: 0.95;
-    }
-    
-    .climate-stats {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    
-    .stat {
-      text-align: center;
-    }
-    
-    .stat-number {
-      font-size: 48px;
-      font-weight: 700;
-      display: block;
-      margin-bottom: 8px;
-    }
-    
-    .stat-label {
-      font-size: 16px;
-      opacity: 0.9;
+    .legal-body a {
+      color: var(--color-accent);
     }
     
     /* Footer */
     footer {
-      padding: 40px 0;
-      background: #1f2937;
-      color: #9ca3af;
-      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(0,0,0,0.06);
     }
     
-    footer a {
-      color: #9ca3af;
-      text-decoration: none;
-      margin: 0 15px;
+    footer .container {
+      max-width: 1200px;
     }
     
-    footer a:hover {
-      color: white;
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     
     .footer-links {
-      margin-bottom: 20px;
+      display: flex;
+      gap: 2rem;
     }
     
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-      
-      .hero p {
-        font-size: 18px;
-      }
-      
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .pricing-grid {
-        grid-template-columns: 1fr;
+    .footer-links a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--color-ink);
+    }
+    
+    .footer-copy {
+      color: var(--color-muted);
+      font-size: 0.85rem;
+    }
+    
+    @media (max-width: 600px) {
+      html {
+        font-size: 16px;
       }
       
       .nav-links {
         display: none;
       }
       
-      .climate-stats {
-        gap: 30px;
+      .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="container">
-      <nav class="nav">
-        <div class="logo">Tavra</div>
+      <nav>
+        <a href="/" class="logo">Tavra</a>
         <div class="nav-links">
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#climate">Climate</a>
+          <a href="/cos">Chief of Staff</a>
+          <a href="/privacy">Privacy</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <main class="legal-content">
     <div class="container">
-      <h1>Your AI Chief of Staff<br>via SMS</h1>
-      <p>No apps. No logins. Just text. Get reminders, take notes, manage your calendar, and stay informed—all through simple text messages.</p>
-      <a href="sms:+14632752647&body=Hello" class="cta-button">Start Free Trial</a>
-      <div class="phone-number">Text: <strong>+1 (XXX) XXX-XXXX</strong></div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features" id="features">
-    <div class="container">
-      <h2 class="section-title">Everything You Need</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">⏰</div>
-          <h3>Smart Reminders</h3>
-          <p>Just text: "Remind me to call mom tomorrow at 3pm" and we'll handle the rest. Natural language, automatic delivery.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">📝</div>
-          <h3>Instant Notes</h3>
-          <p>Capture ideas on the go. "Note: great idea for blog post about AI" — searchable, organized, always accessible.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🎤</div>
-          <h3>Voice Messages</h3>
-          <p>Send voice messages or call directly. We transcribe everything so you can read or listen later.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">📅</div>
-          <h3>Calendar Sync</h3>
-          <p>Connect your Google Calendar. Create events, check your schedule, never miss a meeting—all via text.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🗞️</div>
-          <h3>News Updates</h3>
-          <p>Ask "What's the latest news?" and get real-time summaries. Stay informed without leaving your messages.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🌍</div>
-          <h3>Carbon Negative</h3>
-          <p>We offset 2x our carbon emissions. Every conversation helps remove CO₂ from the atmosphere.</p>
-        </div>
+      <div class="legal-header">
+        <h1>Terms of Service</h1>
+        <p class="legal-meta">Effective Date: January 1, 2026</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Pricing Section -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <h2 class="section-title">Simple, Transparent Pricing</h2>
       
-      <div class="pricing-grid">
-        <!-- Basic -->
-        <div class="pricing-card">
-          <h3>Basic</h3>
-          <div class="price">$4.99<span>/month</span></div>
-          <ul>
-            <li>100 interactions/month</li>
-            <li>SMS messaging</li>
-            <li>Smart reminders</li>
-            <li>Personal notes</li>
-            <li>News search</li>
-          </ul>
-          <a href="sms:+14632752647&body=upgrade" class="pricing-button">Start Free Trial</a>
-          <div class="trial-note">14 days free, cancel anytime</div>
-        </div>
+      <div class="legal-body">
+        <p>Welcome to Tavra. These Terms of Service ("Terms") govern your use of our services, including our AI assistant products accessible via SMS, voice, and other communication channels ("Services"). By using our Services, you agree to these Terms.</p>
         
-        <!-- Plus (Featured) -->
-        <div class="pricing-card featured">
-          <div class="pricing-badge">Most Popular</div>
-          <h3>Plus</h3>
-          <div class="price">$6.99<span>/month</span></div>
-          <ul>
-            <li>250 interactions/month</li>
-            <li>Everything in Basic</li>
-            <li>Voice calls</li>
-            <li>Voice messages</li>
-            <li>Priority support</li>
-          </ul>
-          <a href="sms:+14632752647&body=upgrade" class="pricing-button">Start Free Trial</a>
-          <div class="trial-note">14 days free, cancel anytime</div>
-        </div>
+        <h2>1. About Tavra</h2>
+        <p>Tavra is a Public Benefit Corporation committed to making AI accessible to everyone and maintaining environmental sustainability. Our Services are designed to help you manage tasks, reminders, notes, and more through simple text and voice interactions.</p>
         
-        <!-- Pro -->
-        <div class="pricing-card">
-          <h3>Pro</h3>
-          <div class="price">$17.99<span>/month</span></div>
-          <ul>
-            <li>750 interactions/month</li>
-            <li>Everything in Plus</li>
-            <li>Google Calendar sync</li>
-            <li>Advanced features</li>
-            <li>Premium support</li>
-          </ul>
-          <a href="sms:+14632752647&body=upgrade" class="pricing-button">Start Free Trial</a>
-          <div class="trial-note">14 days free, cancel anytime</div>
-        </div>
+        <h2>2. Eligibility</h2>
+        <p>You must be at least 18 years old to use our Services. By using our Services, you represent that you meet this requirement and have the legal capacity to enter into these Terms.</p>
+        
+        <h2>3. Your Account</h2>
+        <p>Your phone number serves as your account identifier. You are responsible for maintaining the security of your phone and any interactions made through our Services. Please notify us immediately if you believe unauthorized access has occurred.</p>
+        
+        <h2>4. Acceptable Use</h2>
+        <p>You agree to use our Services only for lawful purposes. You may not:</p>
+        <ul>
+          <li>Use the Services for any illegal activity</li>
+          <li>Attempt to gain unauthorized access to our systems</li>
+          <li>Send spam or unsolicited messages through our platform</li>
+          <li>Impersonate another person or entity</li>
+          <li>Use the Services to harass, abuse, or harm others</li>
+          <li>Reverse engineer or attempt to extract our underlying technology</li>
+        </ul>
+        
+        <h2>5. Subscriptions and Billing</h2>
+        <p>Some features require a paid subscription. By subscribing:</p>
+        <ul>
+          <li>You authorize us to charge your payment method on a recurring basis</li>
+          <li>Subscriptions automatically renew unless cancelled</li>
+          <li>You can cancel at any time; cancellation takes effect at the end of your billing period</li>
+          <li>Refunds are provided at our discretion for unused service periods</li>
+        </ul>
+        
+        <h2>6. AI-Generated Content</h2>
+        <p>Our Services use artificial intelligence to generate responses. While we strive for accuracy:</p>
+        <ul>
+          <li>AI responses may contain errors or inaccuracies</li>
+          <li>Our Services are not a substitute for professional advice (medical, legal, financial, etc.)</li>
+          <li>You are responsible for verifying important information</li>
+          <li>Critical decisions should not rely solely on AI-generated content</li>
+        </ul>
+        
+        <h2>7. Your Content</h2>
+        <p>You retain ownership of content you create through our Services (notes, reminders, etc.). By using our Services, you grant us a limited license to process and store your content solely to provide the Services to you.</p>
+        
+        <h2>8. Privacy</h2>
+        <p>Your privacy is important to us. Our collection and use of personal information is governed by our <a href="/privacy">Privacy Policy</a>, which is incorporated into these Terms.</p>
+        
+        <h2>9. Service Availability</h2>
+        <p>We strive to maintain reliable service but cannot guarantee uninterrupted availability. We may modify, suspend, or discontinue Services at any time with reasonable notice when possible.</p>
+        
+        <h2>10. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law:</p>
+        <ul>
+          <li>Our Services are provided "as is" without warranties of any kind</li>
+          <li>We are not liable for indirect, incidental, or consequential damages</li>
+          <li>Our total liability is limited to the amount you paid us in the 12 months preceding the claim</li>
+        </ul>
+        
+        <h2>11. Indemnification</h2>
+        <p>You agree to indemnify and hold Tavra harmless from claims arising from your use of the Services, your violation of these Terms, or your violation of any rights of another party.</p>
+        
+        <h2>12. Changes to Terms</h2>
+        <p>We may update these Terms from time to time. We will notify you of material changes via SMS or email. Continued use after changes constitutes acceptance of the updated Terms.</p>
+        
+        <h2>13. Termination</h2>
+        <p>You may stop using our Services at any time. We may suspend or terminate your access for violation of these Terms or for any other reason with notice when practical.</p>
+        
+        <h2>14. Governing Law</h2>
+        <p>These Terms are governed by the laws of the State of Delaware, without regard to conflict of law principles. Any disputes will be resolved in the courts of Delaware.</p>
+        
+        <h2>15. Contact Us</h2>
+        <p>Questions about these Terms? Contact us at:</p>
+        <p>Email: <a href="mailto:legal@tavra.ai">legal@tavra.ai</a><br>
+        Or text "HELP" to our service number.</p>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- Climate Section -->
-  <section class="climate" id="climate">
-    <div class="container">
-      <h2>🌍 Carbon Negative Platform</h2>
-      <p>We offset 2x the carbon emissions from every interaction. Your conversations don't just help you—they help the planet. We've removed <span id="carbon-removed">loading...</span> of CO₂ since launch.</p>
-      
-      <div class="climate-stats">
-        <div class="stat">
-          <span class="stat-number" id="total-interactions">0</span>
-          <span class="stat-label">Total Interactions</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number" id="carbon-offset">0 kg</span>
-          <span class="stat-label">CO₂ Offset</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number" id="net-removed">0 kg</span>
-          <span class="stat-label">Net CO₂ Removed</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="footer-links">
-        <a href="/terms">Terms of Service</a>
-        <a href="/privacy">Privacy Policy</a>
-        <a href="mailto:support@tavra.ai">Contact</a>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/cos">Chief of Staff</a>
+          <a href="/terms">Terms</a>
+          <a href="/privacy">Privacy</a>
+          <a href="mailto:hello@tavra.ai">Contact</a>
+        </div>
+        <p class="footer-copy">© 2026 Tavra. Public Benefit Corporation.</p>
       </div>
-      <p>&copy; 2026 Tavra. All rights reserved. Built with ❤️ for humanity and 🌍 for the planet.</p>
     </div>
   </footer>
-
-  <script>
-  
-    fetch('https://qgpcxqartqpczdlexhwq.supabase.co/functions/v1/carbon-offset-monthly?select=*', {
-      headers: {
-        'apikey': 'ad5df51cb7f6cd92466007a60eca38aa5eafe0cceaa95c69bc23dec7ef1deb6d'
-      }
-    })
-      .then(r => r.json())
-      .then(data => {
-        if (data && data[0]) {
-          document.getElementById('total-interactions').textContent = 
-            data[0].lifetime_interactions.toLocaleString()
-          document.getElementById('carbon-offset').textContent = 
-            data[0].lifetime_offset_kg.toFixed(2) + ' kg'
-          document.getElementById('net-removed').textContent = 
-            data[0].net_removed_kg.toFixed(2) + ' kg'
-          document.getElementById('carbon-removed').textContent = 
-            data[0].net_removed_kg.toFixed(2) + ' kg'
-        }
-      })
-      .catch(err => console.log('Stats loading error:', err))
-  </script>
 </body>
 </html>
-```
