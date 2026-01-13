@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tavra - Your AI Chief of Staff via SMS</title>
+  <meta name="description" content="AI assistant via SMS. No apps, no logins. Just text. Reminders, notes, voice messages, calendar sync. Carbon negative platform.">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Tavra - Your AI Chief of Staff via SMS">
+  <meta property="og:description" content="AI assistant via SMS. No apps, no logins. Just text.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tavra.ai">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #2563eb;
+    }
+    
+    .nav-links a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #666;
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 16px 40px;
+      background: white;
+      color: #667eea;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: transform 0.2s;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+    }
+    
+    .phone-number {
+      margin-top: 20px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+    
+    /* Features */
+    .features {
+      padding: 80px 0;
+      background: #f9fafb;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 60px;
+      color: #1f2937;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .feature-icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+    
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1f2937;
+    }
+    
+    .feature-card p {
+      color: #6b7280;
+      line-height: 1.6;
+    }
+    
+    /* Pricing */
+    .pricing {
+      padding: 80px 0;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+    
+    .pricing-card {
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 40px 30px;
+      text-align: center;
+      position: relative;
+      background: white;
+    }
+    
+    .pricing-card.featured {
+      border-color: #667eea;
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    }
+    
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #667eea;
+      color: white;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .pricing-card h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1f2937;
+    }
+    
+    .pricing-card .price {
+      font-size: 42px;
+      font-weight: 700;
+      color: #667eea;
+      margin: 20px 0;
+    }
+    
+    .pricing-card .price span {
+      font-size: 18px;
+      color: #6b7280;
+    }
+    
+    .pricing-card ul {
+      list-style: none;
+      margin: 30px 0;
+      text-align: left;
+    }
+    
+    .pricing-card ul li {
+      padding: 12px 0;
+      border-bottom: 1px solid #f3f4f6;
+      color: #4b5563;
+    }
+    
+    .pricing-card ul li:before {
+      content: "✓ ";
+      color: #10b981;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    
+    .pricing-button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #667eea;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: background 0.2s;
+    }
+    
+    .pricing-button:hover {
+      background: #5568d3;
+    }
+    
+    .trial-note {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+    
+    /* Climate Section */
+    .climate {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      text-align: center;
+    }
+    
+    .climate h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .climate p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      opacity: 0.95;
+    }
+    
+    .climate-stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 48px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      background: #1f2937;
+      color: #9ca3af;
+      text-align: center;
+    }
+    
+    footer a {
+      color: #9ca3af;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    
+    footer a:hover {
+      color: white;
+    }
+    
+    .footer-links {
+      margin-bottom: 20px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+      
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .climate-stats {
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">Tavra</div>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#climate">Climate</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Your AI Chief of Staff<br>via SMS</h1>
+      <p>No apps. No logins. Just text. Get reminders, take notes, manage your calendar, and stay informed—all through simple text messages.</p>
+      <a href="sms:+14632752647&body=Hello" class="cta-button">Start Free Trial</a>
+      <div class="phone-number">Text: <strong>+1 (XXX) XXX-XXXX</strong></div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">Everything You Need</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⏰</div>
+          <h3>Smart Reminders</h3>
+          <p>Just text: "Remind me to call mom tomorrow at 3pm" and we'll handle the rest. Natural language, automatic delivery.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>Instant Notes</h3>
+          <p>Capture ideas on the go. "Note: great idea for blog post about AI" — searchable, organized, always accessible.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎤</div>
+          <h3>Voice Messages</h3>
+          <p>Send voice messages or call directly. We transcribe everything so you can read or listen later.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Calendar Sync</h3>
+          <p>Connect your Google Calendar. Create events, check your schedule, never miss a meeting—all via text.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🗞️</div>
+          <h3>News Updates</h3>
+          <p>Ask "What's the latest news?" and get real-time summaries. Stay informed without leaving your messages.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Carbon Negative</h3>
+          <p>We offset 2x our carbon emissions. Every conversation helps remove CO₂ from the atmosphere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Simple, Transparent Pricing</h2>
+      
+      <div class="pricing-grid">
+        <!-- Basic -->
+        <div class="pricing-card">
+          <h3>Basic</h3>
+          <div class="price">$4.99<span>/month</span></div>
+          <ul>
+            <li>100 interactions/month</li>
+            <li>SMS messaging</li>
+            <li>Smart reminders</li>
+            <li>Personal notes</li>
+            <li>News search</li>
+          </ul>
+          <a href="sms:+14632752647&body=upgrade" class="pricing-button">Start Free Trial</a>
+          <div class="trial-note">14 days free, cancel anytime</div>
+        </div>
+        
+        <!-- Plus (Featured) -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <h3>Plus</h3>
+          <div class="price">$6.99<span>/month</span></div>
+          <ul>
+            <li>250 interactions/month</li>
+            <li>Everything in Basic</li>
+            <li>Voice calls</li>
+            <li>Voice messages</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="sms:+14632752647&body=upgrade" class="pricing-button">Start Free Trial</a>
+          <div class="trial-note">14 days free, cancel anytime</div>
+        </div>
+        
+        <!-- Pro -->
+        <div class="pricing-card">
+          <h3>Pro</h3>
+          <div class="price">$17.99<span>/month</span></div>
+          <ul>
+            <li>750 interactions/month</li>
+            <li>Everything in Plus</li>
+            <li>Google Calendar sync</li>
+            <li>Advanced features</li>
+            <li>Premium support</li>
+          </ul>
+          <a href="sms:+14632752647&body=upgrade" class="pricing-button">Start Free Trial</a>
+          <div class="trial-note">14 days free, cancel anytime</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Climate Section -->
+  <section class="climate" id="climate">
+    <div class="container">
+      <h2>🌍 Carbon Negative Platform</h2>
+      <p>We offset 2x the carbon emissions from every interaction. Your conversations don't just help you—they help the planet. We've removed <span id="carbon-removed">loading...</span> of CO₂ since launch.</p>
+      
+      <div class="climate-stats">
+        <div class="stat">
+          <span class="stat-number" id="total-interactions">0</span>
+          <span class="stat-label">Total Interactions</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="carbon-offset">0 kg</span>
+          <span class="stat-label">CO₂ Offset</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="net-removed">0 kg</span>
+          <span class="stat-label">Net CO₂ Removed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="/terms">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="mailto:support@tavra.ai">Contact</a>
+      </div>
+      <p>&copy; 2026 Tavra. All rights reserved. Built with ❤️ for humanity and 🌍 for the planet.</p>
+    </div>
+  </footer>
+
+  <script>
+  
+    fetch('https://qgpcxqartqpczdlexhwq.supabase.co/functions/v1/carbon-offset-monthly?select=*', {
+      headers: {
+        'apikey': 'ad5df51cb7f6cd92466007a60eca38aa5eafe0cceaa95c69bc23dec7ef1deb6d'
+      }
+    })
+      .then(r => r.json())
+      .then(data => {
+        if (data && data[0]) {
+          document.getElementById('total-interactions').textContent = 
+            data[0].lifetime_interactions.toLocaleString()
+          document.getElementById('carbon-offset').textContent = 
+            data[0].lifetime_offset_kg.toFixed(2) + ' kg'
+          document.getElementById('net-removed').textContent = 
+            data[0].net_removed_kg.toFixed(2) + ' kg'
+          document.getElementById('carbon-removed').textContent = 
+            data[0].net_removed_kg.toFixed(2) + ' kg'
+        }
+      })
+      .catch(err => console.log('Stats loading error:', err))
+  </script>
+</body>
+</html>
+```
