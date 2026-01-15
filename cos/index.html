@@ -230,11 +230,12 @@
       background: #0a0a0a;
       border-radius: 36px;
       padding: 0.75rem;
-      max-width: 300px;
+      width: 280px;
+      max-width: 100%;
       margin: 0 auto;
       box-shadow: 0 40px 80px rgba(0,0,0,0.3);
     }
-    
+
     .phone-notch {
       width: 100px;
       height: 24px;
@@ -244,12 +245,14 @@
       position: relative;
       z-index: 10;
     }
-    
+
     .phone-screen {
       background: white;
       border-radius: 28px;
       padding: 2rem 1rem 1rem;
-      min-height: 420px;
+      aspect-ratio: 9 / 14;
+      display: flex;
+      flex-direction: column;
     }
     
     .sms-header {
@@ -620,15 +623,38 @@
       html {
         font-size: 16px;
       }
-      
+
       .nav-links a:not(.nav-cta) {
         display: none;
       }
-      
+
       .hero {
         padding: 8rem 0 4rem;
       }
-      
+
+      .phone-mockup {
+        width: 240px;
+        border-radius: 28px;
+        padding: 0.5rem;
+      }
+
+      .phone-notch {
+        width: 80px;
+        height: 20px;
+        border-radius: 0 0 12px 12px;
+        margin: 0 auto -10px;
+      }
+
+      .phone-screen {
+        border-radius: 22px;
+        padding: 1.5rem 0.75rem 0.75rem;
+      }
+
+      .sms-bubble {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
+      }
+
       .footer-content {
         flex-direction: column;
         gap: 1.5rem;
