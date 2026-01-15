@@ -234,17 +234,22 @@
     .phone-mockup {
       background: var(--color-ink);
       border-radius: 24px;
-      padding: 1rem;
-      max-width: 260px;
+      padding: 0.5rem;
+      width: 200px;
+      max-width: 100%;
       margin: 0 auto;
       box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
-    
+
     .phone-screen {
       background: white;
       border-radius: 16px;
       padding: 1rem;
       font-size: 0.8rem;
+      aspect-ratio: 9 / 12;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     
     .sms-bubble {
@@ -367,19 +372,37 @@
       html {
         font-size: 16px;
       }
-      
+
       .nav-links {
         display: none;
       }
-      
+
       .hero {
         padding: 4rem 0 5rem;
       }
-      
+
       .product-card {
         padding: 2rem;
       }
-      
+
+      .phone-mockup {
+        width: 160px;
+        border-radius: 18px;
+        padding: 0.4rem;
+      }
+
+      .phone-screen {
+        border-radius: 14px;
+        padding: 0.75rem;
+        font-size: 0.7rem;
+      }
+
+      .sms-bubble {
+        padding: 0.4rem 0.6rem;
+        border-radius: 10px;
+        margin-bottom: 0.3rem;
+      }
+
       .footer-content {
         flex-direction: column;
         gap: 1.5rem;
