@@ -11,6 +11,10 @@
   <meta property="og:description" content="AI assistant via SMS. No apps, no logins. Just text.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tavra.ai/cos">
+  <meta property="og:image" content="https://tavra.ai/og-image.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tavra.ai/cos">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
@@ -105,15 +109,16 @@
       color: var(--color-ink);
     }
     
-    .nav-cta {
+    .nav-cta,
+    .nav-cta:hover {
       background: var(--color-accent);
-      color: white !important;
+      color: white;
       padding: 0.6rem 1.4rem;
       border-radius: 6px;
       font-weight: 500;
       transition: background 0.2s, transform 0.2s;
     }
-    
+
     .nav-cta:hover {
       background: var(--color-accent-dark);
       transform: translateY(-1px);
@@ -656,9 +661,43 @@
     .hero-cta {
       animation-delay: 0.2s;
     }
+
+    /* Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--color-ink);
+      color: var(--color-paper);
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      text-decoration: none;
+      border-radius: 0 0 4px 0;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <header>
     <div class="container">
       <nav>
@@ -667,18 +706,18 @@
           <a href="#features">Features</a>
           <a href="#pricing">Pricing</a>
           <a href="#climate">Climate</a>
-          <a href="sms:‭+14632752647‬?body=Hello" class="nav-cta">Start Free Trial</a>
+          <a href="sms:+14632752647?body=Hello" class="nav-cta">Start Free Trial</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Hero -->
     <section class="hero">
       <div class="container">
         <div class="hero-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
           </svg>
           Carbon Negative
@@ -688,12 +727,12 @@
         <p class="hero-subtitle">No apps. No logins. No complexity. Just text a number and get a brilliant executive assistant that remembers everything.</p>
         
         <a href="sms:+14632752647?body=Hello" class="hero-cta">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
           </svg>
           Start Free Trial
         </a>
-        <p class="hero-phone">Or text: <strong>‭+1 (463) 275-2647‬</strong></p>
+        <p class="hero-phone">Or text: <strong>+1 (463) 275-2647</strong></p>
       </div>
     </section>
 
@@ -862,12 +901,12 @@
         <h2>Ready to meet your Chief of Staff?</h2>
         <p>Start your free trial today. No credit card required.</p>
         <a href="sms:+14632752647?body=Hello" class="hero-cta">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
           </svg>
           Start Free Trial
         </a>
-        <p class="hero-phone">Or text: <strong>‭+1 (463) 275-2647‬</strong></p>
+        <p class="hero-phone">Or text: <strong>+1 (463) 275-2647</strong></p>
       </div>
     </section>
   </main>

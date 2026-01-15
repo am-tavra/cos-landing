@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service — Tavra</title>
   <meta name="description" content="Terms of Service for Tavra AI products and services.">
-  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tavra.ai/terms">
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   
@@ -188,9 +191,33 @@
         text-align: center;
       }
     }
+
+    /* Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--color-ink);
+      color: var(--color-paper);
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      text-decoration: none;
+      border-radius: 0 0 4px 0;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <header>
     <div class="container">
       <nav>
@@ -203,7 +230,7 @@
     </div>
   </header>
 
-  <main class="legal-content">
+  <main id="main-content" class="legal-content">
     <div class="container">
       <div class="legal-header">
         <h1>Terms of Service</h1>

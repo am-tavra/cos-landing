@@ -11,6 +11,10 @@
   <meta property="og:description" content="AI assistants accessible through the channels you already use.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tavra.ai">
+  <meta property="og:image" content="https://tavra.ai/og-image.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tavra.ai">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
@@ -97,9 +101,10 @@
       color: var(--color-ink);
     }
     
-    .nav-cta {
+    .nav-cta,
+    .nav-cta:hover {
       background: var(--color-ink);
-      color: var(--color-paper) !important;
+      color: var(--color-paper);
       padding: 0.6rem 1.4rem;
       border-radius: 6px;
       font-weight: 500;
@@ -401,9 +406,43 @@
     .product-card {
       animation: fadeUp 0.8s ease-out 0.2s both;
     }
+
+    /* Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--color-ink);
+      color: var(--color-paper);
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      text-decoration: none;
+      border-radius: 0 0 4px 0;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <header>
     <div class="container">
       <nav>
@@ -417,7 +456,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero">
       <div class="container">
         <div class="hero-content">
@@ -425,7 +464,7 @@
           <p class="hero-subtitle">AI assistants accessible through the channels you already use—SMS, voice, email. No apps to download. No accounts to create. Just help, when you need it.</p>
           
           <div class="carbon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
             Carbon Negative Platform
@@ -444,8 +483,8 @@
             <p class="product-tagline">Your AI executive assistant via SMS</p>
             <p class="product-description">Reminders, notes, calendar management, and intelligent assistance—all through simple text messages. No app required. Just text and get things done.</p>
             <span class="product-cta">
-              Learn more 
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              Learn more
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </span>
