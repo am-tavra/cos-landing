@@ -22,7 +22,7 @@
     :root {
       --color-ink: #1a1a1a;
       --color-paper: #fafaf8;
-      --color-muted: #6b6b6b;
+      --color-muted: #595959;
       --color-accent: #2d5a4a;
       --color-accent-light: #e8f0ed;
       --font-display: 'Instrument Serif', Georgia, serif;
@@ -133,7 +133,15 @@
     .phone-display-number {
       font-family: var(--font-display);
       font-size: 1.5rem;
+    }
+
+    .phone-display-number a {
       color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .phone-display-number a:hover {
+      text-decoration: underline;
     }
 
     /* SMS Mockup */
@@ -425,40 +433,40 @@
         <p>Tavra uses a two-way SMS opt-in process. Users must explicitly consent before receiving any messages beyond the initial welcome.</p>
       </div>
 
-      <div class="phone-display">
+      <div class="phone-display" role="group" aria-label="Service contact information">
         <p class="phone-display-label">Service Phone Number</p>
-        <p class="phone-display-number">+1 (463) 275-2647</p>
+        <p class="phone-display-number"><a href="tel:+14632752647" aria-label="Call Tavra at +1 (463) 275-2647">+1 (463) 275-2647</a></p>
       </div>
 
       <section class="sms-mockup-section">
-        <h2>Opt-In Conversation Flow</h2>
+        <h2 id="sms-flow-heading">Opt-In Conversation Flow</h2>
 
-        <div class="phone-mockup">
+        <div class="phone-mockup" role="img" aria-labelledby="sms-flow-heading">
           <div class="phone-notch"></div>
           <div class="phone-screen">
             <div class="sms-header">
               <div class="sms-header-name">+1 (463) 275-2647</div>
               <div class="sms-header-status">SMS</div>
             </div>
-            <div class="sms-messages">
+            <div class="sms-messages" role="log" aria-label="SMS conversation example">
               <div>
-                <p class="sms-label user-label">User initiates contact</p>
-                <div class="sms-bubble sms-user">Hi</div>
+                <p class="sms-label user-label" id="step1-label">User initiates contact</p>
+                <div class="sms-bubble sms-user" role="article" aria-labelledby="step1-label">Hi</div>
               </div>
 
               <div>
-                <p class="sms-label">Tavra welcome message</p>
-                <div class="sms-bubble sms-tavra">Welcome to Tavra Chief of Staff! By continuing, you agree to receive SMS messages. Msg frequency varies by usage. Msg & data rates may apply. Reply STOP to cancel, HELP for support. Terms: tavra.ai/terms Privacy: tavra.ai/privacy. Reply YES to get started.</div>
+                <p class="sms-label" id="step2-label">Tavra welcome message</p>
+                <div class="sms-bubble sms-tavra" role="article" aria-labelledby="step2-label">Welcome to Tavra Chief of Staff! By continuing, you agree to receive SMS messages. Msg frequency varies by usage. Msg & data rates may apply. Reply STOP to cancel, HELP for support. Terms: tavra.ai/terms Privacy: tavra.ai/privacy. Reply YES to get started.</div>
               </div>
 
               <div>
-                <p class="sms-label user-label">User confirms consent</p>
-                <div class="sms-bubble sms-user">YES</div>
+                <p class="sms-label user-label" id="step3-label">User confirms consent</p>
+                <div class="sms-bubble sms-user" role="article" aria-labelledby="step3-label">YES</div>
               </div>
 
               <div>
-                <p class="sms-label">Service begins</p>
-                <div class="sms-bubble sms-tavra">Hi! I'm your Tavra Chief of Staff. What name would you like me to call you?</div>
+                <p class="sms-label" id="step4-label">Service begins</p>
+                <div class="sms-bubble sms-tavra" role="article" aria-labelledby="step4-label">Hi! I'm your Tavra Chief of Staff. What name would you like me to call you?</div>
               </div>
             </div>
           </div>
@@ -466,7 +474,7 @@
       </section>
 
       <div class="consent-note">
-        <span class="consent-note-icon">!</span>
+        <span class="consent-note-icon" aria-hidden="true">!</span>
         <h3>Important Consent Information</h3>
         <p>No messages are sent until the user replies YES. Phone numbers are collected only through direct user-initiated contact.</p>
       </div>

@@ -28,7 +28,7 @@
     :root {
       --color-ink: #1a1a1a;
       --color-paper: #fafaf8;
-      --color-muted: #6b6b6b;
+      --color-muted: #595959;
       --color-accent: #2d5a4a;
       --color-accent-dark: #1e3d32;
       --color-accent-light: #e8f0ed;
@@ -45,6 +45,11 @@
     html {
       font-size: 18px;
       scroll-behavior: smooth;
+    }
+
+    /* Offset for fixed header when navigating to anchors */
+    section[id] {
+      scroll-margin-top: 5rem;
     }
     
     body {
@@ -839,6 +844,18 @@
     }
 
     /* Accessibility */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     .skip-link {
       position: absolute;
       top: -40px;
@@ -920,9 +937,9 @@
             <h2>Just text. That's it.</h2>
             <p>No app to download. No account to create. No learning curve. Just text our number like you'd text a friend, and get intelligent assistance instantly. Works on any phone—smartphone or flip phone.</p>
           </div>
-          <div class="phone-mockup">
+          <div class="phone-mockup" role="img" aria-label="Phone showing SMS conversation with Chief of Staff: User asks for medication reminder, Chief of Staff confirms daily 8am reminder. User saves a book recommendation, Chief of Staff confirms it's saved.">
             <div class="phone-notch"></div>
-            <div class="phone-screen">
+            <div class="phone-screen" aria-hidden="true">
               <div class="sms-header">
                 <div class="sms-header-name">Chief of Staff</div>
                 <div class="sms-header-status">Chief of Staff</div>
@@ -955,20 +972,20 @@
 
         <div class="steps-grid">
           <div class="step-card">
-            <div class="step-number">1</div>
-            <h3>Send a text</h3>
+            <div class="step-number" aria-hidden="true">1</div>
+            <h3><span class="visually-hidden">Step 1: </span>Send a text</h3>
             <p>Text <code>HI</code> to +1 (463) 275-2647 to get started.</p>
           </div>
 
           <div class="step-card">
-            <div class="step-number">2</div>
-            <h3>Confirm your opt-in</h3>
+            <div class="step-number" aria-hidden="true">2</div>
+            <h3><span class="visually-hidden">Step 2: </span>Confirm your opt-in</h3>
             <p>Receive a welcome message and reply <code>YES</code> to confirm.</p>
           </div>
 
           <div class="step-card">
-            <div class="step-number">3</div>
-            <h3>Start using your Chief of Staff</h3>
+            <div class="step-number" aria-hidden="true">3</div>
+            <h3><span class="visually-hidden">Step 3: </span>Start using your Chief of Staff</h3>
             <p>You're all set! Ask questions, set reminders, and more.</p>
           </div>
         </div>
@@ -990,37 +1007,37 @@
         
         <div class="feature-grid">
           <div class="feature-card">
-            <div class="feature-icon">⏰</div>
+            <div class="feature-icon" aria-hidden="true">⏰</div>
             <h3>Smart Reminders</h3>
             <p>Text "remind me to call mom tomorrow at 3pm" and we'll handle the rest. Natural language, automatic delivery, recurring support.</p>
           </div>
           
           <div class="feature-card">
-            <div class="feature-icon">📝</div>
+            <div class="feature-icon" aria-hidden="true">📝</div>
             <h3>Instant Notes</h3>
             <p>Capture ideas on the go. "Note: great idea for the project" — searchable, organized, always accessible via text.</p>
           </div>
           
           <div class="feature-card">
-            <div class="feature-icon">🎤</div>
+            <div class="feature-icon" aria-hidden="true">🎤</div>
             <h3>Voice Messages</h3>
             <p>Send voice messages or call directly. We transcribe everything and can respond to voice just like text.</p>
           </div>
           
           <div class="feature-card">
-            <div class="feature-icon">📅</div>
+            <div class="feature-icon" aria-hidden="true">📅</div>
             <h3>Calendar Sync</h3>
             <p>Connect Google Calendar and manage your schedule via text. "What's tomorrow?" or "Add lunch with Sarah Friday at noon."</p>
           </div>
           
           <div class="feature-card">
-            <div class="feature-icon">🧠</div>
+            <div class="feature-icon" aria-hidden="true">🧠</div>
             <h3>Memory & Context</h3>
             <p>Your Chief of Staff remembers everything. Previous conversations, preferences, your personal knowledge base—always at hand.</p>
           </div>
           
           <div class="feature-card">
-            <div class="feature-icon">💬</div>
+            <div class="feature-icon" aria-hidden="true">💬</div>
             <h3>Intelligent Chat</h3>
             <p>Ask anything. Get thoughtful, helpful responses. Research, brainstorm, draft messages—a brilliant assistant via SMS.</p>
           </div>
@@ -1052,9 +1069,9 @@
             <a href="sms:+14632752647?body=Hello" class="pricing-cta secondary">Get Started</a>
           </div>
           
-          <div class="pricing-card featured">
-            <div class="pricing-badge">Most Popular</div>
-            <h3 class="pricing-name">Plus</h3>
+          <div class="pricing-card featured" aria-label="Plus plan - Most Popular">
+            <div class="pricing-badge" aria-hidden="true">Most Popular</div>
+            <h3 class="pricing-name">Plus <span class="visually-hidden">- Most Popular plan</span></h3>
             <div class="pricing-price">
               <span class="amount">$6.99</span>
               <span class="period">/month</span>
