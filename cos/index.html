@@ -309,6 +309,115 @@
       margin: 0.5rem 0;
     }
     
+    /* How It Works */
+    .how-it-works {
+      padding: 6rem 0;
+    }
+
+    .how-it-works-phone {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .how-it-works-phone-label {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .how-it-works-phone-number {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--color-ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .how-it-works-phone-number:hover {
+      color: var(--color-accent);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: white;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .step-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+      transform: translateY(-4px);
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--color-accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin: 0 auto 1.25rem;
+    }
+
+    .step-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-card p {
+      color: var(--color-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .step-card code {
+      background: var(--color-accent-light);
+      color: var(--color-accent);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-weight: 500;
+    }
+
+    .sms-disclosures {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .sms-disclosures p {
+      color: var(--color-muted);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .sms-disclosures a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .sms-disclosures a:hover {
+      text-decoration: underline;
+    }
+
     /* Features */
     .features {
       padding: 6rem 0;
@@ -596,6 +705,21 @@
       color: var(--color-muted);
       font-size: 0.85rem;
     }
+
+    .footer-phone {
+      color: var(--color-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-phone a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-phone a:hover {
+      text-decoration: underline;
+    }
     
     /* Responsive */
     @media (max-width: 900px) {
@@ -609,7 +733,8 @@
       }
       
       .feature-grid,
-      .pricing-grid {
+      .pricing-grid,
+      .steps-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
         margin-left: auto;
@@ -746,10 +871,10 @@
       <nav>
         <a href="/" class="logo">Tavra <span>/ Chief of Staff</span></a>
         <div class="nav-links">
+          <a href="#how-it-works">How It Works</a>
           <a href="#features">Features</a>
           <a href="#pricing">Pricing</a>
-          <a href="#climate">Climate</a>
-          <a href="sms:+14632752647?body=Hello" class="nav-cta">Start Free Trial</a>
+          <a href="sms:+14632752647?body=HI" class="nav-cta">Start Free Trial</a>
         </div>
       </nav>
     </div>
@@ -803,6 +928,46 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">How It Works</p>
+          <h2 class="section-title">Get Started in Seconds</h2>
+        </div>
+
+        <div class="how-it-works-phone">
+          <p class="how-it-works-phone-label">Text us at</p>
+          <a href="sms:+14632752647?body=HI" class="how-it-works-phone-number">+1 (463) 275-2647</a>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Send a text</h3>
+            <p>Text <code>HI</code> to +1 (463) 275-2647 to get started.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Confirm your opt-in</h3>
+            <p>Receive a welcome message and reply <code>YES</code> to confirm.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Start using your Chief of Staff</h3>
+            <p>You're all set! Ask questions, set reminders, and more.</p>
+          </div>
+        </div>
+
+        <div class="sms-disclosures">
+          <p>Message frequency varies by usage. Message and data rates may apply. Reply STOP to cancel, HELP for support.</p>
+          <p>By texting, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
         </div>
       </div>
     </section>
@@ -959,7 +1124,9 @@
           <a href="/">Tavra</a>
           <a href="/terms">Terms</a>
           <a href="/privacy">Privacy</a>
+          <a href="/sms-consent">SMS Consent</a>
           <a href="mailto:hello@tavra.ai">Contact</a>
+          <span class="footer-phone">Text us to get started: <a href="sms:+14632752647?body=HI">+1 (463) 275-2647</a></span>
         </div>
         <p class="footer-copy">© 2026 Tavra. Public Benefit Corporation.</p>
       </div>

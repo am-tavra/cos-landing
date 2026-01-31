@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMS Consent Flow — Tavra</title>
+  <meta name="description" content="SMS opt-in consent flow documentation for Tavra Chief of Staff.">
+  <meta name="robots" content="noindex">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tavra.ai/sms-consent">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-ink: #1a1a1a;
+      --color-paper: #fafaf8;
+      --color-muted: #6b6b6b;
+      --color-accent: #2d5a4a;
+      --color-accent-light: #e8f0ed;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 18px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header */
+    header {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    header .container {
+      max-width: 1200px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--color-ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-ink);
+    }
+
+    /* Content */
+    .content {
+      padding: 4rem 0 6rem;
+    }
+
+    .page-header {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Phone Number */
+    .phone-display {
+      background: var(--color-accent-light);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .phone-display-label {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .phone-display-number {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--color-accent);
+    }
+
+    /* SMS Mockup */
+    .sms-mockup-section {
+      margin: 3rem 0;
+    }
+
+    .sms-mockup-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .phone-mockup {
+      background: #0a0a0a;
+      border-radius: 40px;
+      padding: 0.6rem;
+      width: 320px;
+      max-width: 100%;
+      margin: 0 auto;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+    }
+
+    .phone-notch {
+      width: 100px;
+      height: 24px;
+      background: #0a0a0a;
+      border-radius: 0 0 16px 16px;
+      margin: 0 auto -12px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .phone-screen {
+      background: white;
+      border-radius: 32px;
+      padding: 1.25rem 1rem 1rem;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sms-header {
+      text-align: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 1rem;
+    }
+
+    .sms-header-name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .sms-header-status {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+    }
+
+    .sms-messages {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex: 1;
+    }
+
+    .sms-bubble {
+      padding: 0.75rem 1rem;
+      border-radius: 18px;
+      font-size: 0.9rem;
+      max-width: 85%;
+      line-height: 1.5;
+    }
+
+    .sms-user {
+      background: var(--color-accent);
+      color: white;
+      margin-left: auto;
+      border-bottom-right-radius: 4px;
+    }
+
+    .sms-tavra {
+      background: #e9e9eb;
+      color: var(--color-ink);
+      border-bottom-left-radius: 4px;
+    }
+
+    .sms-time {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      margin: 0.75rem 0;
+    }
+
+    .sms-label {
+      font-size: 0.7rem;
+      color: var(--color-muted);
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sms-label.user-label {
+      text-align: right;
+    }
+
+    /* Consent Note */
+    .consent-note {
+      background: white;
+      border: 2px solid var(--color-accent);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-top: 3rem;
+    }
+
+    .consent-note-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--color-accent);
+      color: white;
+      border-radius: 50%;
+      font-weight: 600;
+      margin-right: 0.75rem;
+      vertical-align: middle;
+    }
+
+    .consent-note h3 {
+      display: inline;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 400;
+      vertical-align: middle;
+    }
+
+    .consent-note p {
+      color: #444;
+      margin-top: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    footer .container {
+      max-width: 1200px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-ink);
+    }
+
+    .footer-copy {
+      color: var(--color-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-phone {
+      color: var(--color-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-phone a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-phone a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      html {
+        font-size: 16px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .phone-mockup {
+        width: 280px;
+        border-radius: 32px;
+        padding: 0.5rem;
+      }
+
+      .phone-notch {
+        width: 80px;
+        height: 20px;
+        border-radius: 0 0 12px 12px;
+        margin: 0 auto -10px;
+      }
+
+      .phone-screen {
+        border-radius: 26px;
+        padding: 1rem 0.75rem 0.75rem;
+        min-height: 480px;
+      }
+
+      .sms-bubble {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.8rem;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+    }
+
+    /* Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--color-ink);
+      color: var(--color-paper);
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      text-decoration: none;
+      border-radius: 0 0 4px 0;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/" class="logo">Tavra</a>
+        <div class="nav-links">
+          <a href="/cos">Chief of Staff</a>
+          <a href="/terms">Terms</a>
+          <a href="/privacy">Privacy</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="content">
+    <div class="container">
+      <div class="page-header">
+        <h1>SMS Consent Flow</h1>
+        <p>Tavra uses a two-way SMS opt-in process. Users must explicitly consent before receiving any messages beyond the initial welcome.</p>
+      </div>
+
+      <div class="phone-display">
+        <p class="phone-display-label">Service Phone Number</p>
+        <p class="phone-display-number">+1 (463) 275-2647</p>
+      </div>
+
+      <section class="sms-mockup-section">
+        <h2>Opt-In Conversation Flow</h2>
+
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="sms-header">
+              <div class="sms-header-name">+1 (463) 275-2647</div>
+              <div class="sms-header-status">SMS</div>
+            </div>
+            <div class="sms-messages">
+              <div>
+                <p class="sms-label user-label">User initiates contact</p>
+                <div class="sms-bubble sms-user">Hi</div>
+              </div>
+
+              <div>
+                <p class="sms-label">Tavra welcome message</p>
+                <div class="sms-bubble sms-tavra">Welcome to Tavra Chief of Staff! By continuing, you agree to receive SMS messages. Msg frequency varies by usage. Msg & data rates may apply. Reply STOP to cancel, HELP for support. Terms: tavra.ai/terms Privacy: tavra.ai/privacy. Reply YES to get started.</div>
+              </div>
+
+              <div>
+                <p class="sms-label user-label">User confirms consent</p>
+                <div class="sms-bubble sms-user">YES</div>
+              </div>
+
+              <div>
+                <p class="sms-label">Service begins</p>
+                <div class="sms-bubble sms-tavra">Hi! I'm your Tavra Chief of Staff. What name would you like me to call you?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="consent-note">
+        <span class="consent-note-icon">!</span>
+        <h3>Important Consent Information</h3>
+        <p>No messages are sent until the user replies YES. Phone numbers are collected only through direct user-initiated contact.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/cos">Chief of Staff</a>
+          <a href="/terms">Terms</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/sms-consent">SMS Consent</a>
+          <a href="mailto:hello@tavra.ai">Contact</a>
+          <span class="footer-phone">Text us to get started: <a href="sms:+14632752647?body=HI">+1 (463) 275-2647</a></span>
+        </div>
+        <p class="footer-copy">&copy; 2026 Tavra. Public Benefit Corporation.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

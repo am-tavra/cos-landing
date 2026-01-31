@@ -188,6 +188,21 @@
       color: var(--color-muted);
       font-size: 0.85rem;
     }
+
+    .footer-phone {
+      color: var(--color-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-phone a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-phone a:hover {
+      text-decoration: underline;
+    }
     
     @media (max-width: 600px) {
       html {
@@ -277,25 +292,29 @@
         </ul>
         
         <h2>2. SMS Communications</h2>
-        <p>When you use Tavra Chief of Staff, you will communicate with our service via SMS text messages. By providing your phone number and initiating contact with our service, you consent to receive SMS messages from Tavra.</p>
+        <p>When you use Tavra Chief of Staff, you will communicate with our service via SMS text messages. By providing your phone number and initiating contact with our service, you consent to receive SMS messages from Tavra. For details on our opt-in process, see our <a href="/sms-consent">SMS Consent Flow</a>.</p>
 
-        <p><strong>What messages you'll receive:</strong></p>
+        <p><strong>Phone number collection:</strong> We collect your phone number only when you initiate contact by texting our service number at <strong>+1 (463) 275-2647</strong>. We do not purchase phone numbers from third parties or obtain them through any other means.</p>
+
+        <p><strong>How we use your number:</strong> Your phone number is used solely to provide the Tavra Chief of Staff service, including:</p>
         <ul>
-          <li>Responses to your requests and questions</li>
-          <li>Reminders you've scheduled</li>
-          <li>Service notifications (account status, subscription updates)</li>
+          <li>Responding to your requests and questions</li>
+          <li>Sending reminders you request</li>
+          <li>Service-related notifications (account status, subscription updates)</li>
           <li>Occasional product announcements (no more than 2 per month)</li>
         </ul>
 
-        <p><strong>Message frequency:</strong> Varies based on your usage. Most users send and receive 5-50 messages per week depending on how actively they use the service.</p>
+        <p><strong>Phone number privacy:</strong> We do not sell, rent, or share your phone number with third parties for marketing purposes. Your number is never shared for advertising or promotional purposes by any third party.</p>
+
+        <p><strong>Data storage and retention:</strong> Message content and phone numbers are stored securely using encryption and are retained only as long as needed to provide the service. When you cancel your account, your data is deleted in accordance with our data retention policy.</p>
+
+        <p><strong>Message frequency:</strong> Varies based on your usage and preferences. Most users send and receive 5-50 messages per week depending on how actively they use the service.</p>
 
         <p><strong>Costs:</strong> Message and data rates may apply. Tavra does not charge for SMS messages, but your carrier may.</p>
 
-        <p><strong>Opting out:</strong> You can stop receiving messages at any time by texting STOP to our service number. You will receive a confirmation message and no further messages will be sent.</p>
+        <p><strong>Opting out and data deletion:</strong> You can stop receiving messages and request deletion of your data at any time by texting <strong>STOP</strong> to our service number. You will receive a confirmation message and no further messages will be sent. You can also request data deletion by contacting <a href="mailto:hello@tavra.ai">hello@tavra.ai</a>.</p>
 
-        <p><strong>Help:</strong> Text HELP to receive information about how to contact support.</p>
-
-        <p><strong>Your phone number:</strong> We do not sell, rent, or share your phone number with third parties for marketing purposes. Your number is used solely to provide the Tavra Chief of Staff service.</p>
+        <p><strong>Help:</strong> Text <strong>HELP</strong> to receive information about how to contact support, or email <a href="mailto:hello@tavra.ai">hello@tavra.ai</a>.</p>
 
         <p><strong>Carriers supported:</strong> Tavra supports all major US carriers including AT&T, Verizon, T-Mobile, Sprint, and most regional carriers.</p>
 
@@ -409,7 +428,9 @@
           <a href="/cos">Chief of Staff</a>
           <a href="/terms">Terms</a>
           <a href="/privacy">Privacy</a>
+          <a href="/sms-consent">SMS Consent</a>
           <a href="mailto:hello@tavra.ai">Contact</a>
+          <span class="footer-phone">Text us to get started: <a href="sms:+14632752647?body=HI">+1 (463) 275-2647</a></span>
         </div>
         <p class="footer-copy">© 2026 Tavra. Public Benefit Corporation.</p>
       </div>
